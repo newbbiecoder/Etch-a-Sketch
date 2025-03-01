@@ -27,6 +27,7 @@ adjust_grid.addEventListener("click", () => {
     }
 });
 
+// Create Grid
 function makeGrid(num = 16){
     for(let i = 0; i < num; i++){
         const column_div = document.createElement("colum-div");
@@ -39,15 +40,21 @@ function makeGrid(num = 16){
             row_div.classList.add("row");
             column_div.appendChild(row_div);
 
+            // Default Button Hover Event Listner
+
             row_div.addEventListener("mouseover", () =>{
                 row_div.style.cssText = "background-color: rgba(37,37,40,0.85)";
             })
+
+            // Black Button Event Listener
 
             black.addEventListener("click", () =>{
                 row_div.addEventListener("mouseover", () =>{
                     row_div.style.cssText = "background-color: rgba(37,37,40,0.85)";
                 })
             })
+
+            // Rainbow Event Listener
 
             rainbow.addEventListener("click", function newColor(){
 
@@ -61,6 +68,8 @@ function makeGrid(num = 16){
                     row_div.style.backgroundColor = rgbColor;
                 })
             });
+
+            // Reset Button Event Listener
 
             reset.addEventListener("click", () => {
                 row_div.style.cssText = "background-color: transparent";
@@ -79,10 +88,10 @@ function makeGrid(num = 16){
         container.appendChild(column_div);
     }
 }
-
+// Print the default 16X16 grid
 makeGrid();
 
-
+// Github Repo Event Listener
 github.addEventListener("click", () =>{
     window.open('https://github.com/newbbiecoder', '_blank');
 })
